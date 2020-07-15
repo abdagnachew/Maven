@@ -2,15 +2,17 @@
 Feature: Employee Search
 
 Background:
- And user logged in with valid admin credentials
+ Given user logged in with valid admin credentials
     And user navigate to employee list page 
 
-  @smoke
+  @working
   Scenario: Search employee id
     When user enters valid employe id
     And click on search button
     Then user see employee information is displayed
     Then user edit employee personal details
+    Then user saves the edits
+    
 
   @smoke
   Scenario: Search employee by name

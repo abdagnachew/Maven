@@ -33,11 +33,19 @@ public class EmployeeSearchSteps extends CommonMethods {
 
 	@Then("user edit employee personal details")
 	public void user_edit_employee_personal_details() {
-		jsClick(pdetails.editPD);
+		jsClick(pdetails.saveitBtn);
 		clickRadioOrCheckbox(pdetails.genderRadioGroup, "Male");
 		selectDdValue(pdetails.nationalityDD, "American");
-		jsClick(pdetails.editPD);
+		sendText(pdetails.SSN, "2249009090");
 	}
+	
+	@Then("user saves the edits")
+	public void  user_saves_the_edits() {
+		jsClick(pdetails.saveitBtn);
+
+	}
+	
+	
 
 	@When("user enters valid emp name and last name")
 	public void user_enters_valid_emp_name_and_last_name() {

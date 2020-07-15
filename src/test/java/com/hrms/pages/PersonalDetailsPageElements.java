@@ -17,9 +17,6 @@ public class PersonalDetailsPageElements {
 	@FindBy(name = "personal[optGender]")
 	public List<WebElement> genderRadioGroup;
 
-	@FindBy(xpath = "//div[@id='pdMainContainer']/div[1]/h1")
-	public WebElement lblPersonalDetails;
-
 	@FindBy(id = "personal_txtEmployeeId")
 	public WebElement employeeId;
 	
@@ -29,17 +26,18 @@ public class PersonalDetailsPageElements {
 	@FindBy(xpath = "//input[@id='personal_txtEmpLastName']")
 	public WebElement lastnameGroup;
 	
-	@FindBy(xpath = "//div[@id='profile-pic']//following-sibling::img")
-	public WebElement profilePictureGroup;
+	//@FindBy(xpath = "//div[@id='profile-pic']//following-sibling::img")
+	//public WebElement verifyprofilePictureGroup;
 	
 	@FindBy(xpath="//div[@id='profile-pic']//h1")
 	public WebElement profilePic;
 	
 	@FindBy(id = "btnSave")
-	public WebElement editPD;
+	public WebElement saveitBtn;
 	
-
-
+	@FindBy(xpath= "//input[@id='personal_txtNICNo']")
+	public WebElement SSN;
+	
 	public PersonalDetailsPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
 	}

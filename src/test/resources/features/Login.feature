@@ -1,19 +1,27 @@
-@Login @sprint11
+@sprint5 @login
 
 Feature: Login
 
-@smoke
-  Scenario: valid admin login
-    When user enter valid admin username and password
+  @mvn
+  Scenario Outline: 
+    When user enter "<Username>" and "<Password>"
     And user click on login button
-    Then admin is successfully logged in
-@smoke
-  Scenario: valid ess login
-    When user enters valid ess username and password
-    And user will click on login button
-    Then ess user is successfully logged in
-@smoke
-  Scenario: Login with valid username and invalid password
-    When the user enters valid username and invalid password
-    And user clicks on the login button
-    Then User sees Invalid Credentials text on the page
+    Then "<FirstName>" is successfully logged in
+
+    Examples: 
+      | Username | Password    | FirstName |
+      | Mahady   | Mahady123!! | John      |
+      | abd77    | Syntax123!  | Abdullah  |
+
+  @reporting
+  Scenario Outline: Error message validation while invalid login
+    When user enter "<Username>" and "<Password>"
+    And user click on login button
+    Then user see "<ErrorMessage>"
+
+    Examples: 
+      | Username | Password   | ErrorMessage             |
+      | Admin    | Admin123   | Invalid Credentials      |
+      | Hello    | Syntax123! | Invalid Credentials      |
+      | Admin    |            | Password cannot be empty |
+      |          | Syntax123! | Username cannot be empty |

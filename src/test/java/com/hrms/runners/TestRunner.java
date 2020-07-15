@@ -14,14 +14,19 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "com/hrms/steps", // where we can find implementation code for gherkin steps? we specifiy just
 									// package
 
-		//dryRun = false, // if set to true it will quickly scan that all gherkin steps have
+		dryRun = false, // if set to true it will quickly scan that all gherkin steps have
 						// implementation code
 						// if set to true no actual execution will happen
 
 		monochrome = true
 		,strict = true
-		,tags= "@smoke or @regression"
-		)
+		,tags = "@excel"
+		,plugin= {
+				"pretty",
+				"html:target/cucumber-default-report"
+				 }
+
+)
 public class TestRunner {
 
 }

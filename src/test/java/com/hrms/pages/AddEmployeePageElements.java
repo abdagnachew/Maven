@@ -11,6 +11,9 @@ public class AddEmployeePageElements extends CommonMethods {
 
 	@FindBy(id = "firstName")
 	public WebElement firstName;
+	
+	@FindBy (xpath="//input[@id='middleName']")
+	public WebElement middleName;
 
 	@FindBy(id = "lastName")
 	public WebElement lastName;
@@ -42,12 +45,6 @@ public class AddEmployeePageElements extends CommonMethods {
 	@FindBy(xpath = "//a[@id='menu_pim_viewPimModule']")
 	public WebElement PIM;
 	
-	
-	@FindBy (xpath = "//input[@id='employeeId']/preceding::label[1]")
-	public WebElement labelOne1;
-	
-	@FindBy (id = "hasTopFieldHelp")
-	public WebElement labelOne;
 	
 	public AddEmployeePageElements() {
 		PageFactory.initElements(driver, this);
