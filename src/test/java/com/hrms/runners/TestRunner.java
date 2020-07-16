@@ -20,13 +20,15 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true
 		,strict = true
-		,tags = "@excel"
+		,tags = "@report"
 		,plugin= {
 				"pretty",
-				"html:target/cucumber-default-report"
+				"html:target/cucumber-default-report",
+				"json:target/cucumber.json"
 				 }
 
 )
 public class TestRunner {
+	
 
 }

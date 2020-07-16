@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Assert;
 
 import com.hrms.utils.CommonMethods;
+import com.hrms.utils.ConfigsReader;
 import com.hrms.utils.Constants;
 import com.hrms.utils.ExcelUtility;
 
@@ -15,6 +16,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AddEmployeeSteps extends CommonMethods {
+
+	@Given("user logged in with valid admin credentials")
+	public void user_is_logged_with_valid_admin_credentials() {
+		sendText(login.username, ConfigsReader.getProperty("username"));
+		sendText(login.password, ConfigsReader.getProperty("password"));
+		click(login.loginBtn);
+	}
 
 	@Given("user navigates to AddEmployeePage")
 	public void user_navigates_to_AddEmployeePage() {
@@ -62,6 +70,22 @@ public class AddEmployeeSteps extends CommonMethods {
 	@When("user clicks on create login checkbox")
 	public void user_clicks_on_create_login_checkbox() {
 		jsClick(addEmp.checkboxLoginDetails);
+	}
+
+	@When("user enters employees first name and last name")
+	public void user_enters_employees_first_name_and_last_name() {
+		sendText(addEmp.firstName, "David");
+		sendText(addEmp.lastName, "Peter");
+		
+	}
+
+	@When("user enters login credentials")
+	public void user_enters_login_credentials() {
+		sendText(addEmp.username, "Mouse");
+		sendText(addEmp.password, "Blinker");
+
+		
+
 	}
 
 	@Then("user enters login credentials as {string} and {string}")
@@ -114,7 +138,7 @@ public class AddEmployeeSteps extends CommonMethods {
 	public void employee_is_added() {
 		System.out.println("-----Employee is added using datatable");
 	}
-	
+
 	@When("user enters employee data from {string} excel sheet then employee is added")
 	public void user_enters_employee_data_from_excel_sheet_then_employee_is_added(String sheetName) {
 		List<Map<String, String>> excelList = ExcelUtility.excelIntoListOfMaps(Constants.TESTDATA_FILEPATH, sheetName);

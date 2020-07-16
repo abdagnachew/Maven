@@ -5,25 +5,13 @@ import org.junit.Assert;
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
-public class LoginSteps extends CommonMethods {
-	
-
-import java.util.List;
-import java.util.Map;
-
-import org.junit.Assert;
-
-import com.hrms.utils.CommonMethods;
-import com.hrms.utils.ConfigsReader;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.List;
+import java.util.Map;
 
 public class LoginSteps extends CommonMethods {
 
@@ -82,10 +70,11 @@ public class LoginSteps extends CommonMethods {
 		sendText(login.username, username);
 		sendText(login.password, password);
 	}
-	
+
 	@Then("user see {string}")
 	public void user_see(String errorMessage) {
-		Assert.assertEquals("Not correct error message is displayed", errorMessage, login.errorMsg.getText());;
+		Assert.assertEquals("Not correct error message is displayed", errorMessage, login.errorMsg.getText());
+		;
 	}
 
 	@Then("{string} is successfully logged in")
@@ -107,4 +96,3 @@ public class LoginSteps extends CommonMethods {
 		}
 	}
 }
-
