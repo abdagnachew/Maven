@@ -20,11 +20,12 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true
 		,strict = true
-		,tags = "@report"
+		,tags = "@excel"
 		,plugin= {
 				"pretty",
 				"html:target/cucumber-default-report",
-				"json:target/cucumber.json"
+				"json:target/cucumber.json",
+				"rerun:target/failed.txt"
 				 }
 
 )

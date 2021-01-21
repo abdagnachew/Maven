@@ -1,8 +1,7 @@
-@sprint5
+#Author Abe
 
 Feature: Login
 
-  @mvn
   @smoke
   Scenario Outline: 
     When user enter "<Username>" and "<Password>"
@@ -10,11 +9,10 @@ Feature: Login
     Then "<FirstName>" is successfully logged in
 
     Examples: 
-      | Username | Password    | FirstName |
-      | Mahady   | Mahady123!! | John      |
-      | abd77    | Syntax123!  | Abdullah  |
+      |Username   |Password          | FirstName |
+      |Abdag      |BankAccount1992!!!| Lobby     |
 
-  @report
+  @smoke
   Scenario Outline: Error message validation while invalid login
     When user enter "<Username>" and "<Password>"
     And user click on login button

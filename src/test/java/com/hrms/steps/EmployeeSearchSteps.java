@@ -14,9 +14,9 @@ public class EmployeeSearchSteps extends CommonMethods {
 		jsClick(dashboard.empListPage);
 	}
 
-	@When("user enters valid employe id")
+	@When("user enters valid employee id")
 	public void user_enters_valid_employe_id() {
-		sendText(viewEmp.empID, "14493");
+		sendText(viewEmp.empID, "10240");
 	}
 
 	@When("click on search button")
@@ -35,8 +35,8 @@ public class EmployeeSearchSteps extends CommonMethods {
 	public void user_edit_employee_personal_details() {
 		jsClick(pdetails.saveitBtn);
 		clickRadioOrCheckbox(pdetails.genderRadioGroup, "Male");
-		selectDdValue(pdetails.nationalityDD, "American");
-		sendText(pdetails.SSN, "2249009090");
+		selectDdValue(pdetails.nationalityDD, "Turkish");
+		sendText(pdetails.SSN, "100293874");
 	}
 	
 	@Then("user saves the edits")
@@ -45,11 +45,9 @@ public class EmployeeSearchSteps extends CommonMethods {
 
 	}
 	
-	
-
 	@When("user enters valid emp name and last name")
 	public void user_enters_valid_emp_name_and_last_name() {
-		sendText(viewEmp.empName, "Ahleed");
+		sendText(viewEmp.empName, "Testing");
 	}
 
 }

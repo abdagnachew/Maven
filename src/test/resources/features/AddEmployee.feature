@@ -8,7 +8,7 @@ Feature: Add new Employee
   Scenario: Add Employee with first and lastname
     When user enters employees "Booshay" and "Dagnachew"
     And user clicks save button
-    Then employee is added successfully
+    Then "Booshay Dagnachew" is added successfully
 
   @regression
   Scenario: Add Employee without employee id
@@ -19,11 +19,11 @@ Feature: Add new Employee
 
   @regression
   Scenario: AddEmployee and create Login Credentials
-    When user enters employees "Jane" and "Doe"
+    When user enters employees first name and last name
     And user clicks on create login checkbox
-    And user can enters login credentials as "BradPittt10011992" and "Bank!@#Account1992"
+    And user can enters login credentials
     And user clicks save button
-    Then "Jane Doe" is added successfully
+    Then employee is added successfully
 
   #to perform DDT in cucumber we use Scenario Outline with Examples
   @regression
@@ -33,11 +33,11 @@ Feature: Add new Employee
     Then "<FirstName>", "<MiddleName>" and "<LastName>" is added successfully
 
     Examples: 
-      | FirstName | MiddleName | LastName |
-      | Nizarteh  | J          | Alamine  |
-      | Abrahamt  | F          | Sakhit   |
-      | Sohiltt   | S          | Raj      |
-      | Yunuss    | Emre       | Sanoone  |
+      | FirstName | MiddleName | LastName|
+      | Nizt      | J          | Alamine  |
+      | Abt       | F          | Sakhit   |
+      | Soht      | S          | Raj      |
+      | Yunt      | Emre       | Sanoone  |
 
   #adding multiple employees using Cucumber DataTable
   @regression

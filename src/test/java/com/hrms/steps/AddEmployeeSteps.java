@@ -1,6 +1,6 @@
 package com.hrms.steps;
 
-import java.util.List;
+import java.util.List;  
 import java.util.Map;
 
 import org.junit.Assert;
@@ -51,7 +51,7 @@ public class AddEmployeeSteps extends CommonMethods {
 	@Then("employee is added successfully")
 	public void employee_is_added_successfully() {
 		String actual = pdetails.profilePic.getText();
-		String expectedName = "Bobby Booshay";
+		String expectedName = "Lobby Smith";
 		Assert.assertEquals(expectedName, actual);
 	}
 
@@ -74,36 +74,33 @@ public class AddEmployeeSteps extends CommonMethods {
 
 	@When("user enters employees first name and last name")
 	public void user_enters_employees_first_name_and_last_name() {
-		sendText(addEmp.firstName, "David");
-		sendText(addEmp.lastName, "Peter");
-		
+		sendText(addEmp.firstName, "Lobby");
+		sendText(addEmp.lastName, "Smith");
+}
+	@When("user can enters login credentials")
+	public void user_can_enters_login_credentials() {
+	   sendText(addEmp.username, "Aby10011992");
+	   sendText(addEmp.password, "Bank!@#Account1992!");
+	   sendText(addEmp.confirmPassword, "Bank!@#Account1992!");
 	}
 
-	@When("user enters login credentials")
-	public void user_enters_login_credentials() {
-		sendText(addEmp.username, "Mouse");
-		sendText(addEmp.password, "Blinker");
-
-		
-
-	}
 
 	@Then("user enters login credentials as {string} and {string}")
 	public void user_enters_login_credentials(String uid, String pwd) {
 		addEmp.createEmpLoginCR(uid, pwd);
 	}
 
-	@When("user can enters login credentials as {string} and {string}")
-	public void user__can_enters_login_credentials_as_and(String fname, String mname, String lname) {
+	@Then("user can enters login credentials as {string} and {string}")
+	public void user_can_enters_login_credentials_as_and(String fname, String lname) {
 		sendText(addEmp.firstName, fname);
-		sendText(addEmp.firstName, lname);
+		sendText(addEmp.lastName, lname);
 	}
 
 	@When("user enter employees {string}, {string} and {string}")
 	public void user_enter_employees_and(String fname, String mname, String lname) {
 		sendText(addEmp.firstName, fname);
 		sendText(addEmp.firstName, mname);
-		sendText(addEmp.firstName, lname);
+		sendText(addEmp.lastName, lname);
 	}
 
 	@Then("{string}, {string} and {string} is added successfully")

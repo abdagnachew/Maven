@@ -16,10 +16,12 @@ import io.cucumber.junit.CucumberOptions;
 		,strict=true
 		,tags= "@smoke"
 		,plugin= {
-				"pretty",//prints gherkin steps in console
-				"html:target/cucumber-default-report",//create basic html report in specified location
-				"json:target/cucumber.json"
-		}
+				"pretty",
+				"html:target/cucumber-default-report",
+				"json:target/cucumber.json",
+				"rerun:target/failed.txt"
+				 }
+		
 		)
 
 public class SmokeRunner {

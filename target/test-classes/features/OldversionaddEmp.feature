@@ -1,4 +1,3 @@
-#Author: Ane
 Feature: Add new Employee OLD
 
   Background: 
@@ -6,16 +5,16 @@ Feature: Add new Employee OLD
     And user navigates to AddEmployeePage
 
   Scenario: Add Employee with first and lastname
-    When user enters employees "John" and "Smith"
+    When user enters employees "Booshay" and "Dagnachew"
     And user clicks save button
-    Then "John Smith" is added successfully
+    Then "Booshay Dagnachew" is added successfully
 
   Scenario: Add Employee without employee id
-    When user enters employees "John" and "Smith"
+    When user enters employees "Booshay" and "Dagnachew"
     And user deletes employee id
     And user clicks save button
-    Then "John Smith" is added successfully
-@testone
+    Then "Booshay Dagnachew" is added successfully
+
   Scenario: AddEmployee and create Login Credentials
     When user enters employees first name and last name
     And user clicks on create login checkbox
@@ -45,4 +44,3 @@ Feature: Add new Employee OLD
 
   Scenario: Adding multiple employees from excel
     When user enters employee data from "EmployeeLoginCredentials" excel sheet then employee is added
-    

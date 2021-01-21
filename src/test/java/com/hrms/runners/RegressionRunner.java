@@ -1,7 +1,7 @@
 package com.hrms.runners;
 
 
-import org.junit.runner.RunWith;
+import org.junit.runner.RunWith; 
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -10,15 +10,17 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions (
 		features = "src/test/resources/features/",
 		glue="com/hrms/steps", 
-		//dryRun=true, 
+		dryRun=false, 
 		monochrome = true
 		,strict=true
 		,tags= "@regression"
 		,plugin= {
 				"pretty",
 				"html:target/cucumber-default-report",
-				"json:target/cucumber.json"
-		}
+				"json:target/cucumber.json",
+				"rerun:target/failed.txt"
+				 }
+		
 		)
 
 public class RegressionRunner {
